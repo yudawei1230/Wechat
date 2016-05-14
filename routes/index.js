@@ -13,4 +13,8 @@ router.get('/wechat', function(req, res, next) {
 	var d = shasum.digest('hex');
 	req.query.signature === d ? res.end(req.query.echostr) : res.end();
 });
+router.post('/wechat', function(req, res, next) {
+	console.log(req.body);
+	res.end();
+});
 module.exports = router;
