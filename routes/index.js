@@ -14,7 +14,7 @@ router.get('/wechat', function(req, res, next) {
 	req.query.signature === d ? res.end(req.query.echostr) : res.end();
 });
 router.post('/wechat', function(req, res, next) {
-	console.log(req.body);
+	console.log(1);
 	res.end();
 });
 module.exports = router;
