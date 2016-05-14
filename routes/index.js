@@ -11,6 +11,6 @@ router.get('/wechat', function(req, res, next) {
 	var p = ['yudawei',req.query.timestamp,req.query.nonce].sort().join('');
 	shasum.update(p);
 	var d = shasum.digest('hex');
-	res.query.signature === d ? res.end(res.query.echostr) : res.end();
+	req.query.signature === d ? res.end(req.query.echostr) : res.end();
 });
 module.exports = router;
