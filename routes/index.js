@@ -26,6 +26,10 @@ var getAccess = http.request(head,function(serverData){
     res.send(500,'error');
   console.log(accessToken);
 });
+getAccess.on('error',function(e){
+  console.log(`problem with request : ${e}`);
+})
+getAccess.end();
 /* GET home page. */
 router.get('/wechat', function(req, res, next) {
     console.log(req.query);
