@@ -14,17 +14,11 @@ var head = {
 
 };
 var getAccess = http.request(head,function(serverData){
-  if(serverData.satus.Code == 200){
      serverData.on('data',function(data){
         accessToken += data;
      }).on('end',function(){
        console.log(accessToken);
        res.send(200,body);
-     })
-  }
-  else
-    res.send(500,'error');
-  console.log(accessToken);
 });
 getAccess.on('error',function(e){
   console.log(`problem with request : ${e}`);
