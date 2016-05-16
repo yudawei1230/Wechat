@@ -5,8 +5,8 @@ var http = require('http');
 var accessToken = '';
 var head = {
   method:'GET',
-  host:'https://api.weixin.qq.com',
-  path:'/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET',
+  host:'https://api.weixin.qq.com/',
+  path:'/cgi-bin/token?grant_type=client_credential&appid=wx958c9c637fb0e1f9&secret=e27a6f0512e827c9b9c611f6aff72188',
   port:80,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
