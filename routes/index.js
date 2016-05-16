@@ -25,4 +25,9 @@ router.post('/wechat', function(req, res, next) {
 	console.log(1);
 	res.end();
 });
+router.post('*', function(req, res, next) {
+	console.log(1);
+  console.log(req.body);
+	res.end();
+});
 module.exports = router;
