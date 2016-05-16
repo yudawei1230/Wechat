@@ -2,6 +2,8 @@ var express = require('express');
 var crypto = require('crypto');
 var router = express.Router();
 var http = require('https');
+var xml2js = require('xml2js');
+var parser = new xml2js.Parser();
 var accessToken = '';
 var url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx958c9c637fb0e1f9&secret=e27a6f0512e827c9b9c611f6aff72188';
 
@@ -22,6 +24,9 @@ router.get('/wechat', function(req, res, next) {
     res.end();
 });
 router.post('*', function(req, res, next) {
+  parser.parseString(req.body,(err,data)=>{
+    console.log(data);
+  })
   console.log(req.body);
 	res.end();
 });
