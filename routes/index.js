@@ -25,9 +25,10 @@ router.get('/wechat', function(req, res, next) {
 });
 router.post('*', function(req, res, next) {
   parser.parseString(req.body,(err,data)=>{
-    console.log(data);
+    console.log(data.xml);
+    console.log(data.xml.MsgType);
+    console.log(data.xml.Content);
   })
-  console.log(req.body);
 	res.end();
 });
 module.exports = router;
