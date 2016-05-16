@@ -22,7 +22,7 @@ router.get('/wechat', function(req, res, next) {
     res.end();
 });
 router.post('/wechat', function(req, res, next) {
-	console.log(req.body);
+	console.log(1);
 	res.end();
 });
 module.exports = router;
