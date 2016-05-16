@@ -18,7 +18,6 @@ var getAccess = http.request(head,function(serverData){
         accessToken += data;
      }).on('end',function(){
        console.log(accessToken);
-       res.send(200,body);
      });
 });
 getAccess.on('error',function(e){
