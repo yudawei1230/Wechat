@@ -26,8 +26,11 @@ router.get('/wechat', function(req, res, next) {
 router.post('*', function(req, res, next) {
   parser.parseString(req.body,(err,data)=>{
     console.log(data.xml);
-    data.xml.MsgType[0] == 'text' ? console.log(data.xml.content[0]):console.log(new Date(data.xml.CreateTime[0]*1000));
-    data.xml.MsgType[0] == 'event' ? console.log(data.xml.FromUserName):console.log(new Date(data.xml.CreateTime[0]*1000));
+    console.log(data.xml.MsgType[0]);
+    console.log(data.xml.Content[0]);
+    console.log(new Date(data.xml.CreateTime[0]*1000));
+    //data.xml.MsgType[0] == 'text' ? console.log(data.xml.content[0]):console.log(new Date(data.xml.CreateTime[0]*1000));
+    //data.xml.MsgType[0] == 'event' ? console.log(data.xml.FromUserName):console.log(new Date(data.xml.CreateTime[0]*1000));
   })
 	res.end();
 });
